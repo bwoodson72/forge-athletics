@@ -29,6 +29,7 @@ export default function CoachesPage() {
           <SectionHeading
             title="Meet Your Coaches"
             subtitle="Certified professionals who train alongside you."
+            as="h1"
           />
         </div>
       </section>

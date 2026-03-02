@@ -4,18 +4,20 @@ interface SectionHeadingProps {
   title: string;
   subtitle?: string;
   align?: 'left' | 'center';
+  as?: 'h1' | 'h2';
 }
 
 export function SectionHeading({
   title,
   subtitle,
   align = 'center',
+  as: Tag = 'h2',
 }: SectionHeadingProps) {
   return (
     <div className={align === 'center' ? 'text-center' : 'text-left'}>
-      <h2 className="font-heading text-3xl font-bold uppercase tracking-wide text-primary md:text-4xl lg:text-5xl">
+      <Tag className="font-heading text-3xl font-bold uppercase tracking-wide text-primary md:text-4xl lg:text-5xl">
         {title}
-      </h2>
+      </Tag>
       {subtitle && (
         <p
           className={cn(

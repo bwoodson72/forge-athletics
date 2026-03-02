@@ -58,6 +58,7 @@ export default function PricingPage() {
           <SectionHeading
             title="Membership Pricing"
             subtitle="Invest in your strength — no contracts, cancel anytime."
+            as="h1"
           />
         </div>
       </section>

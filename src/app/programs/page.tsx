@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { programs } from '@/lib/data/programs';
 import { SectionWrapper } from '@/components/ui/section-wrapper';
 import { SectionHeading } from '@/components/ui/section-heading';
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     description:
       'Explore FORGE Athletics training programs — Barbell Club, Kettlebell & Conditioning, Steel Mace & Clubs, Open Gym, Fundamentals, and 1-on-1 Coaching.',
     url: '/programs',
-    images: ['/og-image.avif'],
+    images: ['/og-image.jpg'],
     type: 'website',
     siteName: 'FORGE Athletics',
   },
@@ -30,6 +31,7 @@ export default function ProgramsPage() {
           <SectionHeading
             title="Training Programs"
             subtitle="From barbell fundamentals to unconventional strength — find the program that fits your goals."
+            as="h1"
           />
         </div>
       </section>
@@ -57,9 +59,9 @@ export default function ProgramsPage() {
                   {program.level}
                 </p>
 
-                <h3 className="mt-2 font-heading text-2xl font-bold uppercase text-primary md:text-3xl">
+                <h2 className="mt-2 font-heading text-2xl font-bold uppercase text-primary md:text-3xl">
                   {program.name}
-                </h3>
+                </h2>
 
                 <p className="mt-4 text-lg leading-relaxed text-secondary">
                   {program.description}
@@ -108,29 +110,21 @@ export default function ProgramsPage() {
                 </div>
               </div>
 
-              {/* ── Image placeholder ────────────────────────────────────── */}
-              {/*
-               * TODO: replace this div with:
-               * <div className={cn(
-               *   'relative aspect-video w-full overflow-hidden rounded-lg',
-               *   isOdd && 'lg:order-1',
-               * )}>
-               *   <Image
-               *     src={program.image}
-               *     alt={program.name}
-               *     fill
-               *     sizes="(max-width: 1024px) 100vw, 50vw"
-               *     className="object-cover"
-               *   />
-               * </div>
-               */}
+              {/* ── Image ────────────────────────────────────────────────── */}
               <div
                 className={cn(
-                  'aspect-video w-full rounded-lg bg-surface-alt',
+                  'relative aspect-video w-full overflow-hidden rounded-lg',
                   isOdd && 'lg:order-1',
                 )}
-                aria-hidden="true"
-              />
+              >
+                <Image
+                  src={program.image}
+                  alt={program.name}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </SectionWrapper>
         );

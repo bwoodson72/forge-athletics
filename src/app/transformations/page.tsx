@@ -5,6 +5,7 @@ import { SectionHeading } from '@/components/ui/section-heading';
 import { CTABanner } from '@/components/ui/cta-banner';
 import { TestimonialCard } from '@/components/cards/testimonial-card';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Member Transformations',
@@ -30,6 +31,7 @@ export default function TransformationsPage() {
           <SectionHeading
             title="Transformations"
             subtitle="Real members. Real work. Real results."
+            as="h1"
           />
         </div>
       </section>

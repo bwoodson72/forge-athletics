@@ -2,22 +2,34 @@ import type { Metadata } from 'next';
 import { SectionWrapper } from '@/components/ui/section-wrapper';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { ContactForm } from '@/components/contact-form';
+import { StructuredData, localBusinessSchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-  title: 'Get In Touch | FORGE Athletics',
+  title: 'Contact Us',
   description:
     'Contact FORGE Athletics to claim your free trial, ask about memberships, or book a 1-on-1 coaching session.',
+  openGraph: {
+    title: 'Contact Us | FORGE Athletics',
+    description:
+      'Contact FORGE Athletics to claim your free trial, ask about memberships, or book a 1-on-1 coaching session.',
+    url: '/contact',
+    images: ['/og-image.jpg'],
+    type: 'website',
+    siteName: 'FORGE Athletics',
+  },
 };
 
 export default function ContactPage() {
   return (
     <>
+      <StructuredData data={localBusinessSchema} />
       {/* ── Page header ───────────────────────────────────────────────────── */}
       <section className="flex min-h-[40vh] items-center justify-center bg-surface">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
           <SectionHeading
             title="Get In Touch"
             subtitle="Your first week is on us."
+            as="h1"
           />
         </div>
       </section>

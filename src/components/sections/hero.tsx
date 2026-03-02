@@ -1,4 +1,5 @@
 import Button from '@/components/ui/button';
+import Image from 'next/image';
 
 /**
  * Full-viewport hero section.
@@ -10,26 +11,23 @@ import Button from '@/components/ui/button';
 export function Hero() {
   return (
     <section className="relative -mt-16 min-h-screen overflow-hidden md:-mt-20">
-      {/*
-       * ─── Background ──────────────────────────────────────────────────────────
-       * TODO: swap the gradient div below for a real photo once assets are ready:
-       *
-       *   import Image from 'next/image';
-       *   <Image
-       *     src="/images/hero.avif"
-       *     alt=""
-       *     fill
-       *     priority
-       *     sizes="100vw"
-       *     className="object-cover object-center"
-       *   />
-       *
-       * The overlay div and all content below stay exactly as-is.
-       */}
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-(--bg-surface) to-(--bg-primary)"
-        aria-hidden="true"
-      />
+
+
+
+
+         <Image
+          src="/images/hero.avif"
+           alt="forge athletics gym"
+            fill
+            priority
+           sizes="100vw"
+          className="object-cover object-center"
+          />
+
+      {/*<div*/}
+      {/*  className="absolute inset-0 bg-gradient-to-b from-(--bg-surface) to-(--bg-primary)"*/}
+      {/*  aria-hidden="true"*/}
+      {/*/>*/}
 
       {/* Dark overlay — keeps text legible over the real photo */}
       <div className="absolute inset-0 bg-black/60" aria-hidden="true" />

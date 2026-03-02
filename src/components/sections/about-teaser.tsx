@@ -2,6 +2,7 @@ import { SectionWrapper } from '@/components/ui/section-wrapper';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import Button from '@/components/ui/button';
+import Image from 'next/image';
 
 export function AboutTeaser() {
   return (
@@ -32,23 +33,16 @@ export function AboutTeaser() {
           </div>
         </ScrollReveal>
 
-        {/* ─── Right: photo placeholder ────────────────────────────────────── */}
+        {/* ─── Right: photo ────────────────────────────────────────────────── */}
         <ScrollReveal delay={0.2}>
-          <div
-            className="aspect-video w-full rounded-lg bg-surface-alt"
-            aria-hidden="true"
-          >
-            {/*
-             * TODO: replace with:
-             * <Image
-             *   src="/images/about-gym.avif"
-             *   alt="Inside the FORGE Athletics training floor"
-             *   fill
-             *   sizes="(max-width: 1024px) 100vw, 50vw"
-             *   className="rounded-lg object-cover"
-             * />
-             * Remember to add `relative overflow-hidden` to the parent div.
-             */}
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+            <Image
+              src="/images/about-gym.avif"
+              alt="Inside the FORGE Athletics training floor"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
         </ScrollReveal>
       </div>

@@ -28,15 +28,15 @@ export function SiteFooter() {
 
           {/* Column 2 — Quick links */}
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-primary">
+            <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-primary">
               Quick Links
-            </h3>
+            </h2>
             <ul className="space-y-2">
               {navigation.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-secondary transition-colors duration-150 hover:text-primary"
+                    className="text-sm text-secondary transition-colors duration-150 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded"
                   >
                     {item.label}
                   </Link>
@@ -47,23 +47,23 @@ export function SiteFooter() {
 
           {/* Column 3 — Location & hours */}
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-primary">
+            <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-primary">
               Visit Us
-            </h3>
+            </h2>
             <address className="not-italic">
               <p className="text-sm text-secondary">{GYM_ADDRESS}</p>
               <p className="text-sm text-secondary">{GYM_CITY}</p>
               <a
                 href={`tel:${GYM_PHONE.replace(/\D/g, '')}`}
-                className="mt-2 block text-sm text-secondary transition-colors duration-150 hover:text-primary"
+                className="mt-2 block rounded text-sm text-secondary transition-colors duration-150 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
               >
                 {GYM_PHONE}
               </a>
             </address>
 
-            <h3 className="mb-3 mt-6 text-xs font-semibold uppercase tracking-widest text-primary">
+            <h2 className="mb-3 mt-6 text-xs font-semibold uppercase tracking-widest text-primary">
               Hours
-            </h3>
+            </h2>
             <ul className="space-y-1">
               {hours.map(({ days, time }) => (
                 <li key={days} className="flex justify-between gap-4 text-sm text-secondary">

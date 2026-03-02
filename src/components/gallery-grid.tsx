@@ -71,6 +71,7 @@ export function GalleryGrid({ onImageClick }: GalleryGridProps) {
                 'group relative overflow-hidden rounded-lg bg-surface-alt',
                 'cursor-pointer transition-all duration-300',
                 'hover:brightness-110 hover:scale-[1.02]',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2',
                 spanning ? 'row-span-2' : 'aspect-square',
               )}
               role="button"

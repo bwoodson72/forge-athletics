@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { Transformation } from '@/lib/data/transformations';
 import { cn } from '@/lib/utils';
 
@@ -29,32 +30,23 @@ export function TestimonialCard({
         featured ? 'lg:grid-cols-2 lg:gap-16' : 'lg:grid-cols-[220px_1fr] lg:gap-12',
       )}
     >
-      {/* ── Photo placeholder ─────────────────────────────────────────────── */}
-      {/*
-       * TODO: replace with:
-       * <div className={cn(
-       *   'relative overflow-hidden rounded-lg',
-       *   featured ? 'aspect-square w-full' : 'mx-auto aspect-square w-32 lg:mx-0 lg:w-full',
-       *   featured && flipped && 'lg:order-2',
-       * )}>
-       *   <Image
-       *     src={transformation.image}
-       *     alt={transformation.name}
-       *     fill
-       *     sizes={featured ? '(max-width: 1024px) 100vw, 50vw' : '(max-width: 1024px) 128px, 220px'}
-       *     className="object-cover object-top"
-       *   />
-       * </div>
-       */}
+      {/* ── Photo ─────────────────────────────────────────────────────────── */}
       <div
         className={cn(
-          'bg-surface-alt',
+          'relative overflow-hidden rounded-lg',
           featured
-            ? cn('aspect-square w-full rounded-lg', flipped && 'lg:order-2')
+            ? cn('aspect-square w-full', flipped && 'lg:order-2')
             : 'mx-auto aspect-square w-32 rounded-full lg:mx-0 lg:w-full lg:rounded-lg',
         )}
-        aria-hidden="true"
-      />
+      >
+        <Image
+          src={transformation.image}
+          alt={transformation.name}
+          fill
+          sizes={featured ? '(max-width: 1024px) 100vw, 50vw' : '(max-width: 1024px) 128px, 220px'}
+          className="object-cover object-top"
+        />
+      </div>
 
       {/* ── Quote ─────────────────────────────────────────────────────────── */}
       <div

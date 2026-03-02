@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Program } from '@/lib/data/programs';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 interface ProgramCardProps {
   program: Program;
@@ -18,20 +19,19 @@ export function ProgramCard({ program, className }: ProgramCardProps) {
         className,
       )}
     >
-      {/* ── Image placeholder ─────────────────────────────────────────────── */}
-      {/*
-       * TODO: replace with:
-       * <div className="relative aspect-video overflow-hidden">
-       *   <Image
-       *     src={program.image}
-       *     alt={program.name}
-       *     fill
-       *     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-       *     className="object-cover transition-transform duration-300 group-hover:scale-105"
-       *   />
-       * </div>
-       */}
-      <div className="aspect-video bg-surface-alt" aria-hidden="true" />
+
+
+        <div className="relative aspect-video overflow-hidden">
+          <Image
+            src={program.image}
+            alt={program.name}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+
+      {/*<div className="aspect-video bg-surface-alt" aria-hidden="true" />*/}
 
       {/* ── Card body ─────────────────────────────────────────────────────── */}
       <div className="p-5">
