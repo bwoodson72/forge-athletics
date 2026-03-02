@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { Coach } from '@/lib/data/coaches';
 
 interface CoachCardProps {
@@ -6,31 +7,20 @@ interface CoachCardProps {
 
 export function CoachCard({ coach }: CoachCardProps) {
   return (
-    <article className="group overflow-hidden rounded-lg border border-border bg-surface">
+    <article className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface">
       {/* ── Photo ──────────────────────────────────────────────────────────── */}
-      {/*
-       * TODO: replace this div with:
-       * <div className="relative aspect-square overflow-hidden">
-       *   <Image
-       *     src={coach.image}
-       *     alt={coach.name}
-       *     fill
-       *     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-       *     className="object-cover object-top grayscale transition-all duration-500 group-hover:grayscale-0"
-       *   />
-       * </div>
-       *
-       * The `group` class is already on the <article> element above, so
-       * `group-hover:grayscale-0` will trigger when hovering anywhere on
-       * the card — a larger and more forgiving hit target than the image alone.
-       */}
-      <div
-        className="aspect-square bg-surface-alt grayscale transition-all duration-500 group-hover:grayscale-0"
-        aria-hidden="true"
-      />
+      <div className="relative aspect-square overflow-hidden">
+        <Image
+          src={coach.image}
+          alt={coach.name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover object-top grayscale transition-all duration-500 group-hover:grayscale-0"
+        />
+      </div>
 
       {/* ── Body ───────────────────────────────────────────────────────────── */}
-      <div className="p-5">
+      <div className="flex flex-1 flex-col p-5">
         <h3 className="font-heading text-xl font-bold uppercase text-primary">
           {coach.name}
         </h3>

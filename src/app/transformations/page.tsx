@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { transformations } from '@/lib/data/transformations';
 import { SectionWrapper } from '@/components/ui/section-wrapper';
-import { SectionHeading } from '@/components/ui/section-heading';
+import { PageHeader } from '@/components/ui/page-header';
 import { CTABanner } from '@/components/ui/cta-banner';
 import { TestimonialCard } from '@/components/cards/testimonial-card';
 import { cn } from '@/lib/utils';
@@ -25,16 +25,7 @@ export const metadata: Metadata = {
 export default function TransformationsPage() {
   return (
     <>
-      {/* ── Page header ───────────────────────────────────────────────────── */}
-      <section className="flex min-h-[40vh] items-center justify-center bg-surface">
-        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-          <SectionHeading
-            title="Transformations"
-            subtitle="Real members. Real work. Real results."
-            as="h1"
-          />
-        </div>
-      </section>
+      <PageHeader title="Transformations" subtitle="Real members. Real work. Real results." />
 
       {/* ── Transformation sections ────────────────────────────────────────── */}
       {transformations.map((transformation, index) => {

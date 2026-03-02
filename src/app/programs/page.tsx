@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { programs } from '@/lib/data/programs';
 import { SectionWrapper } from '@/components/ui/section-wrapper';
-import { SectionHeading } from '@/components/ui/section-heading';
+import { PageHeader } from '@/components/ui/page-header';
 import { CTABanner } from '@/components/ui/cta-banner';
 import Button from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -25,16 +25,10 @@ export const metadata: Metadata = {
 export default function ProgramsPage() {
   return (
     <>
-      {/* ── Page header ───────────────────────────────────────────────────── */}
-      <section className="flex min-h-[40vh] items-center justify-center bg-surface">
-        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-          <SectionHeading
-            title="Training Programs"
-            subtitle="From barbell fundamentals to unconventional strength — find the program that fits your goals."
-            as="h1"
-          />
-        </div>
-      </section>
+      <PageHeader
+        title="Training Programs"
+        subtitle="From barbell fundamentals to unconventional strength — find the program that fits your goals."
+      />
 
       {/* ── Program sections ──────────────────────────────────────────────── */}
       {programs.map((program, index) => {

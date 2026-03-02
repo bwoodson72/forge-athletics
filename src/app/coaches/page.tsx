@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { coaches } from '@/lib/data/coaches';
 import { SectionWrapper } from '@/components/ui/section-wrapper';
-import { SectionHeading } from '@/components/ui/section-heading';
+import { PageHeader } from '@/components/ui/page-header';
 import { CTABanner } from '@/components/ui/cta-banner';
 import { CoachCard } from '@/components/cards/coach-card';
 
@@ -23,16 +23,10 @@ export const metadata: Metadata = {
 export default function CoachesPage() {
   return (
     <>
-      {/* ── Page header ───────────────────────────────────────────────────── */}
-      <section className="flex min-h-[40vh] items-center justify-center bg-surface">
-        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-          <SectionHeading
-            title="Meet Your Coaches"
-            subtitle="Certified professionals who train alongside you."
-            as="h1"
-          />
-        </div>
-      </section>
+      <PageHeader
+        title="Meet Your Coaches"
+        subtitle="Certified professionals who train alongside you."
+      />
 
       {/* ── Coaches grid ──────────────────────────────────────────────────── */}
       <SectionWrapper>
@@ -49,7 +43,7 @@ export default function CoachesPage() {
           {coaches.map((coach) => (
             <li
               key={coach.name}
-              className="w-full sm:w-[calc(50%_-_0.75rem)] lg:w-[calc(33.333%_-_1rem)]"
+              className="flex w-full sm:w-[calc(50%_-_0.75rem)] lg:w-[calc(33.333%_-_1rem)]"
             >
               <CoachCard coach={coach} />
             </li>

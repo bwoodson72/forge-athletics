@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { SectionWrapper } from '@/components/ui/section-wrapper';
-import { SectionHeading } from '@/components/ui/section-heading';
+import { PageHeader } from '@/components/ui/page-header';
 import { ContactForm } from '@/components/contact-form';
 import { StructuredData, localBusinessSchema } from '@/components/structured-data';
 
@@ -23,16 +23,7 @@ export default function ContactPage() {
   return (
     <>
       <StructuredData data={localBusinessSchema} />
-      {/* ── Page header ───────────────────────────────────────────────────── */}
-      <section className="flex min-h-[40vh] items-center justify-center bg-surface">
-        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-          <SectionHeading
-            title="Get In Touch"
-            subtitle="Your first week is on us."
-            as="h1"
-          />
-        </div>
-      </section>
+      <PageHeader title="Get In Touch" subtitle="Your first week is on us." />
 
       {/* ── Two-column layout ─────────────────────────────────────────────── */}
       <SectionWrapper>
@@ -54,8 +45,8 @@ export default function ContactPage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-accent">
                   Address
                 </p>
-                <p className="text-secondary">1847 Fall Creek Hwy</p>
-                <p className="text-secondary">Granbury, TX 76049</p>
+                <p className="text-secondary">400 N Travis Street, Suite 101</p>
+                <p className="text-secondary">Granbury, TX 76048</p>
               </div>
 
               {/* Phone */}
@@ -64,10 +55,10 @@ export default function ContactPage() {
                   Phone
                 </p>
                 <a
-                  href="tel:+18175550142"
+                  href="tel:+18175550174"
                   className="text-secondary transition hover:text-primary"
                 >
-                  (817) 555-0142
+                  (817) 555-0174
                 </a>
               </div>
 
@@ -96,26 +87,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* ── Map placeholder ─────────────────────────────────────────── */}
-            {/*
-             * TODO: replace this div with a Google Maps iframe embed, e.g.:
-             *   <iframe
-             *     src="https://www.google.com/maps/embed?pb=..."
-             *     width="100%"
-             *     height="100%"
-             *     style={{ border: 0 }}
-             *     allowFullScreen
-             *     loading="lazy"
-             *     referrerPolicy="no-referrer-when-downgrade"
-             *     title="FORGE Athletics location"
-             *   />
-             * Wrap in <div className="aspect-video overflow-hidden rounded-lg">
-             */}
-            <div
-              className="aspect-video rounded-lg bg-surface-alt"
-              aria-label="Map placeholder — Google Maps embed goes here"
-              role="img"
-            />
           </div>
         </div>
       </SectionWrapper>

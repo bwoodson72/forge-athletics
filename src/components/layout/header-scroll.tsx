@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { NavItem } from '@/lib/data/navigation';
 import { MobileNav } from './mobile-nav';
@@ -102,27 +103,10 @@ export function HeaderScroll({ navigation }: HeaderScrollProps) {
             }
             aria-expanded={mobileNavOpen}
             aria-controls="mobile-nav-drawer"
-            className="flex h-10 w-10 flex-col items-center justify-center gap-[5px] md:hidden"
+            className="flex h-10 w-10 items-center justify-center text-primary md:hidden"
             onClick={() => setMobileNavOpen((prev) => !prev)}
           >
-            <span
-              className={cn(
-                'block h-px w-6 bg-primary transition-transform duration-300',
-                mobileNavOpen && 'translate-y-[6px] rotate-45',
-              )}
-            />
-            <span
-              className={cn(
-                'block h-px w-6 bg-primary transition-all duration-300',
-                mobileNavOpen && 'scale-x-0 opacity-0',
-              )}
-            />
-            <span
-              className={cn(
-                'block h-px w-6 bg-primary transition-transform duration-300',
-                mobileNavOpen && 'translate-y-[-6px] -rotate-45',
-              )}
-            />
+            {mobileNavOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </header>

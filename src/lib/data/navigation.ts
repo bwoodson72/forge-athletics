@@ -9,6 +9,5 @@ export const navigation: NavItem[] = [
   { label: 'Coaches', href: '/coaches' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Transformations', href: '/transformations' },
-  { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/contact' },
 ];
